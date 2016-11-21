@@ -3,7 +3,7 @@
   <Identifier Id="ae98c9e5-8e14-4c92-b45a-c4fd24a49123">
     <Name>CxViewer</Name>
     <Author>Checkmarx</Author>
-    <Version>8.4.0.18</Version>
+    <Version>8.4.0.19</Version>
     <Description xml:space="preserve">Checkmarx Visual Studio Plugin</Description>
     <MoreInfoUrl>http://www.checkmarx.com</MoreInfoUrl>
     <Icon>Resources\Checkmarx.ico</Icon>

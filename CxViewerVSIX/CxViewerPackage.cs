@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <copyright file="CxViewerPackage.cs" company="Company">
 //     Copyright (c) Company.  All rights reserved.
 // </copyright>
@@ -34,7 +34,7 @@ namespace CxViewerVSIX
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    [InstalledProductRegistration("#110", "#112", "8.4", IconResourceID = 400)] // Info on this package for Help/About
+    [InstalledProductRegistration("#110", "#112","8.4.0.19", IconResourceID = 400)] // Info on this package for Help/About
     [ProvideMenuResource("Menus.ctmenu", 1)]
     //[ProvideAutoLoad("ADFC4E64-0397-11D1-9F4E-00A0C911004F")]
     [Guid(CxViewerPackage.PackageGuidString)]
