@@ -41,12 +41,21 @@ namespace CxViewerAction.Helpers
             Project[] projectList = project.ProjectPaths.Count == 0 ? new Project[] { project } : project.ProjectPaths.ToArray();
 
 
+         
+
+
             data = Compress(projectList, GetFileExcludeRegex(fileExtToExclude), GetFolderToExcludeRegex(foldersToExclude),
                             project.ProjectPaths.Count > 0, maxAllowedZipFileSize, out error);
 
-
-            return (data.Length < maxAllowedZipFileSize) ? data : null;
+            if (data != null && data.Length < maxAllowedZipFileSize)
+            {
+                return data;
+            }
+           
+                return null;
+            
         }
+
 
         private static string GetFileExcludeRegex(string[] filesExtToExclude)
         {
@@ -59,6 +68,7 @@ namespace CxViewerAction.Helpers
                 part.AppendFormat("({0}$)|", ext.Trim());
 
             part = part.Remove(part.Length - 1, 1);
+            part = part.Replace("*", ".*");
 
             return string.Format("^((?!({0})).)*$", part);
         }
@@ -74,6 +84,7 @@ namespace CxViewerAction.Helpers
                 part.AppendFormat("({0})|", ext.Trim());
 
             part = part.Remove(part.Length - 1, 1);
+            part = part.Replace("*", ".*");
 
             return string.Format("^((?!({0})).)*$", part);
         }
@@ -106,39 +117,43 @@ namespace CxViewerAction.Helpers
 
                         foreach (Project p in projects)
                         {
-                            foreach (string filePath in p.FilePathList) // scan only the file selected
-                            {
-                                if (Directory.Exists(p.RootPath))
-                                {
-                                    // find number of chars to remove from orginal file path
-                                    Logger.Create().Info("Zip file: " + p.FilePathList);
-                                    WriteEntryToZip(oZip, filePath.Remove(0, p.RootPath.Length).TrimStart(new[] { '/', '\\' }), filePath);
-                                }
-                            }
 
+                            int subProjects = projects.Where(p2 => p.RootPath.Contains(p2.RootPath)).Count();
 
-                            foreach (string folderPath in p.FolderPathList) // scan only the Folder selected
+                            if (subProjects == 1) //If the project is not a subProject
                             {
-                                Logger.Create().Info("Zip Folder: " + p.FolderPathList);
-                                if (!WriteDirectoryToZip(oZip, folderPath.TrimEnd('\\'), sExcludeFile, sExcludePath, maxAllowedZipFileSize, commonPathLength))
+                                foreach (string filePath in p.FilePathList) // scan only the file selected
                                 {
-                                    error = string.Format("allowable archive size {0}mb exceeded", Convert.ToInt32(maxAllowedZipFileSize / 1024 / 1204));
-                                    break;
-                                }
-                            }
-                            if (!p.FilePathList.Any() && !p.FolderPathList.Any() && Directory.Exists(p.RootPath))
-                            {
-                                //in case there are no selected files and folders - scan the whi
-                                Logger.Create().Info("Zip Root Path: " + p.RootPath);
-                                if (!WriteDirectoryToZip(oZip, p.RootPath.TrimEnd('\\'), sExcludeFile, sExcludePath, maxAllowedZipFileSize, commonPathLength))
-                                {
-                                    error = string.Format("allowable archive size {0}mb exceeded", Convert.ToInt32(maxAllowedZipFileSize / 1024 / 1204));
-                                    break;
+                                    if (Directory.Exists(p.RootPath))
+                                    {
+                                        // find number of chars to remove from orginal file path
+                                        Logger.Create().Info("Zip file: " + p.FilePathList);
+                                        WriteEntryToZip(oZip, filePath.Remove(0, p.RootPath.Length).TrimStart(new[] { '/', '\\' }), filePath);
+                                    }
                                 }
 
 
-                            }
+                                foreach (string folderPath in p.FolderPathList) // scan only the Folder selected
+                                {
+                                    Logger.Create().Info("Zip Folder: " + p.FolderPathList);
+                                    if (!WriteDirectoryToZip(oZip, folderPath.TrimEnd('\\'), sExcludeFile, sExcludePath, maxAllowedZipFileSize, commonPathLength))
+                                    {
+                                        error = string.Format("allowable archive size {0}mb exceeded", Convert.ToInt32(maxAllowedZipFileSize / 1024 / 1204));
+                                        break;
+                                    }
+                                }
+                                if (!p.FilePathList.Any() && !p.FolderPathList.Any() && Directory.Exists(p.RootPath))
+                                {
+                                    //in case there are no selected files and folders - scan the whi
+                                    Logger.Create().Info("Zip Root Path: " + p.RootPath);
+                                    if (!WriteDirectoryToZip(oZip, p.RootPath.TrimEnd('\\'), sExcludeFile, sExcludePath, maxAllowedZipFileSize, commonPathLength))
+                                    {
+                                        error = string.Format("allowable archive size {0}mb exceeded", Convert.ToInt32(maxAllowedZipFileSize / 1024 / 1204));
+                                        break;
+                                    }
 
+                                }
+                            }
                         }
 
                         oZip.Flush();
