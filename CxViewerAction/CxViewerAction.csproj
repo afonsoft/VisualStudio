@@ -680,7 +680,12 @@
       <Name>DgvFilterPopup</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\gol-passagens-aereas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GOL.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
   <PropertyGroup>
     <PreBuildEvent>
