@@ -61,6 +61,7 @@
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(291, 20);
             this.txtServer.TabIndex = 1;
+            this.txtServer.Text = "10.50.8.142";
             // 
             // txtUserName
             // 
@@ -69,6 +70,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(291, 20);
             this.txtUserName.TabIndex = 2;
+            this.txtUserName.Text = "GOL_SBC\\";
             // 
             // lblUserName
             // 

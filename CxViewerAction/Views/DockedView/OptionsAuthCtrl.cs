@@ -316,5 +316,11 @@ namespace CxViewerAction.Views.DockedView
         {
             btTestConnection.Enabled = !radioButtonSaml.Checked;
         }
+
+        private void PictureBoxLogo_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(this.pictureBoxLogo, "MOD by Afonso");
+        }
     }
 }

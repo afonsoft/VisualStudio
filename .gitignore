@@ -3,3 +3,18 @@
 ################################################################################
 
 /.vs
+/Common/bin/Debug
+/Common/bin/Release
+/Common/obj
+/CxViewerAction/bin
+/CxViewerAction/obj
+/CxViewerColorButton/bin
+/CxViewerColorButton/obj
+/CxViewerDgvFilterPopup/bin
+/CxViewerDgvFilterPopup/obj/Build
+/CxViewerDgvFilterPopup/obj/Debug
+/CxViewerDgvFilterPopup/obj/Release
+/CxViewerVSIX/bin
+/CxViewerVSIX/obj
+/packages/Microsoft.VSSDK.BuildTools.15.0.26201/build
+/packages/Microsoft.VSSDK.BuildTools.15.0.26201/tools/vssdk/bin

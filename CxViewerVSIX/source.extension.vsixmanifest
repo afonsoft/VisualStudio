@@ -1,23 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="ae98c9e5-8e14-4c92-b45a-c4fd24a49123" Publisher="Checkmarx" Version="8.50.3" Language="en-US" />
-    <DisplayName>CxViewer</DisplayName>
-    <Description xml:space="preserve" >Checkmarx Visual Studio Plugin MOD GOL VS2019</Description>
-    <MoreInfo>http://www.checkmarx.com</MoreInfo>
-    <Icon>Resources\Checkmarx.ico</Icon>
-    <PreviewImage>Resources\Checkmarx.ico</PreviewImage>
-  </Metadata>
-  <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro"  Version="[10.0,17.0)" />
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[10.0,17.0)" />
-    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[10.0,17.0)"/>
-    <InstallationTarget Id="Microsoft.VisualStudio.Premium" Version="[10.0,17.0)"/>
-  </Installation>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-  </Assets>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[10.0,17.0)" DisplayName="Visual Studio core editor" />
-  </Prerequisites>
+    <Metadata>
+        <Identity Id="ae98c9e5-8e14-4c92-b45a-c4fd24a49123" Publisher="Checkmarx" Version="8.50.4" Language="en-US" />
+        <DisplayName>CxViewer</DisplayName>
+        <Description xml:space="preserve" >Checkmarx Visual Studio Plugin MOD GOL VS2019</Description>
+        <MoreInfo>http://www.checkmarx.com</MoreInfo>
+        <Icon>Resources\Checkmarx.ico</Icon>
+        <PreviewImage>Resources\Checkmarx.ico</PreviewImage>
+        <Tags>Checkmarx</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro"  Version="[10.0,17.0)" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[10.0,17.0)" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[10.0,17.0)"/>
+        <InstallationTarget Id="Microsoft.VisualStudio.Premium" Version="[10.0,17.0)"/>
+    </Installation>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[10.0,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
 </PackageManifest>

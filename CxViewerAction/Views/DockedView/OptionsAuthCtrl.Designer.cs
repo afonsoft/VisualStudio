@@ -32,6 +32,7 @@ namespace CxViewerAction.Views.DockedView
         {
             this.components = new System.ComponentModel.Container();
             this.groupAuth = new System.Windows.Forms.GroupBox();
+            this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.radioButtonSaml = new System.Windows.Forms.RadioButton();
             this.rbUseCredentials = new System.Windows.Forms.RadioButton();
             this.rbUseCurrentUser = new System.Windows.Forms.RadioButton();
@@ -43,17 +44,16 @@ namespace CxViewerAction.Views.DockedView
             this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btTestConnection = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupAuth.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupAuth
             // 
             this.groupAuth.AutoSize = true;
-            this.groupAuth.Controls.Add(this.pictureBox1);
+            this.groupAuth.Controls.Add(this.pictureBoxLogo);
             this.groupAuth.Controls.Add(this.radioButtonSaml);
             this.groupAuth.Controls.Add(this.rbUseCredentials);
             this.groupAuth.Controls.Add(this.rbUseCurrentUser);
@@ -69,6 +69,17 @@ namespace CxViewerAction.Views.DockedView
             this.groupAuth.TabIndex = 0;
             this.groupAuth.TabStop = false;
             this.groupAuth.Text = "Authentication";
+            // 
+            // pictureBoxLogo
+            // 
+            this.pictureBoxLogo.Image = global::CxViewerAction.Properties.Resources.gol_logo;
+            this.pictureBoxLogo.Location = new System.Drawing.Point(264, 49);
+            this.pictureBoxLogo.Name = "pictureBoxLogo";
+            this.pictureBoxLogo.Size = new System.Drawing.Size(110, 56);
+            this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogo.TabIndex = 7;
+            this.pictureBoxLogo.TabStop = false;
+            this.pictureBoxLogo.MouseHover += new System.EventHandler(this.PictureBoxLogo_MouseHover);
             // 
             // radioButtonSaml
             // 
@@ -110,7 +121,7 @@ namespace CxViewerAction.Views.DockedView
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(218, 20);
             this.txtServer.TabIndex = 1;
-            this.txtServer.Text = "https://checkmarx.voegol.com.br/";
+            this.txtServer.Text = "10.50.8.142";
             // 
             // txtUserName
             // 
@@ -118,6 +129,7 @@ namespace CxViewerAction.Views.DockedView
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(218, 20);
             this.txtUserName.TabIndex = 2;
+            this.txtUserName.Text = "GOL_SBC\\";
             // 
             // txtPassword
             // 
@@ -177,16 +189,6 @@ namespace CxViewerAction.Views.DockedView
             this.btTestConnection.UseVisualStyleBackColor = true;
             this.btTestConnection.Click += new System.EventHandler(this.btTestConnection_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CxViewerAction.Properties.Resources.gol_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(264, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 56);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // errorProvider
             // 
             this.errorProvider.ContainerControl = this;
@@ -203,7 +205,7 @@ namespace CxViewerAction.Views.DockedView
             this.VisibleChanged += new System.EventHandler(this.OptionsAuthCtrl_VisibleChanged);
             this.groupAuth.ResumeLayout(false);
             this.groupAuth.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,6 +227,6 @@ namespace CxViewerAction.Views.DockedView
         private System.Windows.Forms.RadioButton rbUseCredentials;
         private System.Windows.Forms.RadioButton rbUseCurrentUser;
         private System.Windows.Forms.RadioButton radioButtonSaml;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxLogo;
     }
 }
