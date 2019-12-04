@@ -1,7 +1,7 @@
 <stylecopresultscache>
   <version>12</version>
   <project key="-21373125">
-    <configuration>DEBUG;TRACE</configuration>
+    <configuration>CODE_ANALYSIS;TRACE</configuration>
   </project>
   <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
