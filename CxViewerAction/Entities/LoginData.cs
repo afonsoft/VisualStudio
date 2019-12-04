@@ -45,7 +45,7 @@ namespace CxViewerAction.Entities
         string unboundRunID;
 
         private int _updateStatusInterval = 10;
-        private int _maxZipFileSize = 200;
+        private int _maxZipFileSize = 400;
 
         private SimpleDecision _isRunScanInBackground;
         private SimpleDecision _isOpenPerspective;
@@ -54,7 +54,7 @@ namespace CxViewerAction.Entities
         private string[] _excludeFolder = "bin,obj,.svn,_svn,backup".Split(',');
 
         private int _reconnectInterval = 15;
-        private int _reconnectCount = 3;
+        private int _reconnectCount = 5;
 
         private bool _disableConnectionOptimizations = false;
 

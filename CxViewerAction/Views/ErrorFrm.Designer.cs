@@ -40,13 +40,13 @@
             this.txtErrorDescription.Multiline = true;
             this.txtErrorDescription.Name = "txtErrorDescription";
             this.txtErrorDescription.ReadOnly = true;
-            this.txtErrorDescription.Size = new System.Drawing.Size(298, 123);
+            this.txtErrorDescription.Size = new System.Drawing.Size(462, 229);
             this.txtErrorDescription.TabIndex = 0;
             // 
             // btnReconnect
             // 
             this.btnReconnect.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnReconnect.Location = new System.Drawing.Point(74, 167);
+            this.btnReconnect.Location = new System.Drawing.Point(238, 248);
             this.btnReconnect.Name = "btnReconnect";
             this.btnReconnect.Size = new System.Drawing.Size(75, 23);
             this.btnReconnect.TabIndex = 1;
@@ -56,7 +56,7 @@
             // btnRelogin
             // 
             this.btnRelogin.DialogResult = System.Windows.Forms.DialogResult.Retry;
-            this.btnRelogin.Location = new System.Drawing.Point(155, 167);
+            this.btnRelogin.Location = new System.Drawing.Point(319, 248);
             this.btnRelogin.Name = "btnRelogin";
             this.btnRelogin.Size = new System.Drawing.Size(75, 23);
             this.btnRelogin.TabIndex = 2;
@@ -66,7 +66,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(236, 167);
+            this.btnCancel.Location = new System.Drawing.Point(400, 248);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -78,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(323, 202);
+            this.ClientSize = new System.Drawing.Size(487, 283);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRelogin);

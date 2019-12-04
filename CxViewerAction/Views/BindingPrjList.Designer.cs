@@ -51,7 +51,7 @@ namespace CxViewerAction.Views
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(454, 218);
+            this.groupBox1.Size = new System.Drawing.Size(640, 314);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please select project:";
@@ -73,7 +73,7 @@ namespace CxViewerAction.Views
             this.dgvProjects.Name = "dgvProjects";
             this.dgvProjects.ReadOnly = true;
             this.dgvProjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProjects.Size = new System.Drawing.Size(448, 199);
+            this.dgvProjects.Size = new System.Drawing.Size(634, 295);
             this.dgvProjects.TabIndex = 0;
             // 
             // ProjectID
@@ -116,14 +116,16 @@ namespace CxViewerAction.Views
             this.panel1.Controls.Add(this.cbPublic);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 218);
+            this.panel1.Location = new System.Drawing.Point(0, 314);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 32);
+            this.panel1.Size = new System.Drawing.Size(640, 32);
             this.panel1.TabIndex = 6;
             // 
             // cbPublic
             // 
             this.cbPublic.AutoSize = true;
+            this.cbPublic.Checked = true;
+            this.cbPublic.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbPublic.Location = new System.Drawing.Point(13, 7);
             this.cbPublic.Name = "cbPublic";
             this.cbPublic.Size = new System.Drawing.Size(118, 17);
@@ -137,7 +139,7 @@ namespace CxViewerAction.Views
             this.panel2.Controls.Add(this.btnBind);
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(286, 0);
+            this.panel2.Location = new System.Drawing.Point(472, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(168, 32);
             this.panel2.TabIndex = 7;
@@ -156,7 +158,7 @@ namespace CxViewerAction.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 250);
+            this.ClientSize = new System.Drawing.Size(640, 346);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "frmBindingPrjList";

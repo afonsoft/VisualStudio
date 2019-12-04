@@ -38,15 +38,15 @@
             // 
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 30);
+            this.label1.Size = new System.Drawing.Size(396, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "This kind of project is associated with the CxViewer perspective. Do you want to " +
-                "open this perspective now?";
+    "open this perspective now?";
             // 
             // chRemember
             // 
             this.chRemember.AutoSize = true;
-            this.chRemember.Location = new System.Drawing.Point(15, 58);
+            this.chRemember.Location = new System.Drawing.Point(15, 75);
             this.chRemember.Name = "chRemember";
             this.chRemember.Size = new System.Drawing.Size(135, 17);
             this.chRemember.TabIndex = 1;
@@ -56,7 +56,7 @@
             // btnNo
             // 
             this.btnNo.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btnNo.Location = new System.Drawing.Point(310, 54);
+            this.btnNo.Location = new System.Drawing.Point(333, 71);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(75, 23);
             this.btnNo.TabIndex = 2;
@@ -66,7 +66,7 @@
             // btnYes
             // 
             this.btnYes.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnYes.Location = new System.Drawing.Point(229, 54);
+            this.btnYes.Location = new System.Drawing.Point(237, 71);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(75, 23);
             this.btnYes.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 89);
+            this.ClientSize = new System.Drawing.Size(420, 106);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.chRemember);
