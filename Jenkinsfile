@@ -32,14 +32,10 @@ pipeline {
                 script {
                     if(templateName == "VisualStudio2019-Template")
 					{
-						echo ${WORKSPACE}
-						echo ${JOB_NAME}
-						 // bat "${msbuildLocationVS2019} ${WORKSPACE}\\${JOB_NAME}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"16.0\" /p:DeployExtension=false"
 						bat "${msbuildLocationVS2019} ${WORKSPACE}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"16.0\" /p:DeployExtension=false"
 					}
 					else {
-						//bat "${msbuildLocationVS2022} ${WORKSPACE}\\${JOB_NAME}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"17.0\" /p:DeployExtension=false"
-						bat "${msbuildLocationVS2022} ${WORKSPACE}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"17.0\" /p:DeployExtension=false"
+						bat "${msbuildLocationVS2022} ${WORKSPACE}\\ci.msbuild2022 /t:CI /p:VisualStudioVersion=\"17.0\" /p:DeployExtension=false"
 					}
                 }
             }
