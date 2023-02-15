@@ -47,12 +47,12 @@ pipeline {
                 script {
 		    if(templateName == "VisualStudio2019-Template")
 					{
-						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\Artifacts\\CxViewerVSIX-2019.vsix", destination: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-9.00.19.vsix")])
+						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\Artifacts\\CxViewerVSIX-2019.vsix", destination: "${WORKSPACE}\\Artifacts\\CxViewerVSIX-9.00.19.vsix")])
 						kit.Upload_To_Artifactory("${WORKSPACE}\\Artifacts\\CxViewerVSIX-9.00.19.vsix", "plugins-release-local/com/checkmarx/visual-studio/")
 					}
 					else 
 					{
-						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\Artifacts\\CxViewerVSIX-2022.vsix", destination: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-9.00.19.vsix")])
+						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\Artifacts\\CxViewerVSIX-2022.vsix", destination: "${WORKSPACE}\\Artifacts\\CxViewerVSIX-9.00.19.vsix")])
 						kit.Upload_To_Artifactory("${WORKSPACE}\\Artifacts\\CxViewerVSIX-9.00.19.vsix", "plugins-release-local/com/checkmarx/visual-studio/")
 					}
                 }
