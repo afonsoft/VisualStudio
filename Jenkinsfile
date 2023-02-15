@@ -67,7 +67,7 @@ pipeline {
     post {
         always {
             script {
-                logstashSend failBuild: false, maxLines: 1000
+               // logstashSend failBuild: false, maxLines: 1000
                 if (ipAddress != null) {
                     try {
                         if (doNotDeleteVM == 'true') {
