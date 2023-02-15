@@ -32,10 +32,14 @@ pipeline {
                 script {
                     if(templateName == "VisualStudio2019-Template")
 					{
-						  bat "${msbuildLocationVS2019} ${WORKSPACE}\\${JOB_NAME}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"16.0\" /p:DeployExtension=false"
+						echo ${WORKSPACE}
+						echo ${JOB_NAME}
+						 // bat "${msbuildLocationVS2019} ${WORKSPACE}\\${JOB_NAME}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"16.0\" /p:DeployExtension=false"
+						bat "${msbuildLocationVS2019} ${WORKSPACE}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"16.0\" /p:DeployExtension=false"
 					}
 					else {
-						bat "${msbuildLocationVS2022} ${WORKSPACE}\\${JOB_NAME}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"17.0\" /p:DeployExtension=false"
+						//bat "${msbuildLocationVS2022} ${WORKSPACE}\\${JOB_NAME}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"17.0\" /p:DeployExtension=false"
+						bat "${msbuildLocationVS2022} ${WORKSPACE}\\ci.msbuild /t:CI /p:VisualStudioVersion=\"17.0\" /p:DeployExtension=false"
 					}
                 }
             }
@@ -47,13 +51,13 @@ pipeline {
                 script {
 		    if(templateName == "VisualStudio2019-Template")
 					{
-						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX.vsix", destination: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-2019.vsix")])
-						kit.Upload_To_Artifactory("${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-2019.vsix", "plugins-release-local/com/checkmarx/visual-studio/")
+						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\Artifacts\\CxViewerVSIX.vsix", destination: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-2019.vsix")])
+						kit.Upload_To_Artifactory("${WORKSPACE}\\Artifacts\\CxViewerVSIX-2019.vsix", "plugins-release-local/com/checkmarx/visual-studio/")
 					}
 					else 
 					{
-						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX.vsix", destination: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-2022.vsix")])
-						kit.Upload_To_Artifactory("${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-2022.vsix", "plugins-release-local/com/checkmarx/visual-studio/")
+						fileOperations([folderRenameOperation(source: "${WORKSPACE}\\Artifacts\\CxViewerVSIX.vsix", destination: "${WORKSPACE}\\${JOB_NAME}\\Artifacts\\CxViewerVSIX-2022.vsix")])
+						kit.Upload_To_Artifactory("${WORKSPACE}\\Artifacts\\CxViewerVSIX-2022.vsix", "plugins-release-local/com/checkmarx/visual-studio/")
 					}
                 }
             }
